@@ -46,15 +46,15 @@
 					<section data-background-image="./assets/k8s-background.jpeg"
 					data-background-size="contain">
 						<h2>Why Kubernetes?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
-						<font size="5">Over the years, people called <a href="https://imgs.xkcd.com/comics/compiling.png">developers</a> started<br> virtualizing and containerizing applications (separation of concerns)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
-						<img src="https://kubernetes.io/images/docs/Container_Evolution.svg">
+						<font size="5">Over the years, people called <a href="./assets/compiling.png">developers</a> started<br> virtualizing and containerizing applications (separation of concerns)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+						<img src="./assets/Container_Evolution.svg">
 						<font size="3">image: <a href="https://kubernetes.io/docs/concepts/overview/">https://kubernetes.io/docs/concepts/overview/</a></font>
 					</section>
 					<section>
 						<h2>Docker containers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
 						<font size="5">"It works on my machine"<br><strong>"Then we will ship your machine to the customer"</strong><br></font>
-						<img src="https://k21academy.com/wp-content/uploads/2021/03/Screenshot-from-2021-03-26-11-01-09.png" height="auto" width="45%">
-						<img src="https://www.purestorage.com/content/dam/purestorage/knowledge/containers.jpg.imgo.jpg" height="auto" width="50%">
+						<img src="./assets/container_workflow.png" height="auto" width="45%">
+						<img src="./assets/many-containers.jpg" height="auto" width="50%">
 						<font size="5">
 							<br>Containers made it easy to seperate applications but <u>managing</u> hundreds of containers was cumbersome...
 							<strong>Kubernetes to the rescue!</strong>
@@ -67,7 +67,7 @@
 						<h2>Kubernetes features&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
 						<font size="5">
 							<strong>After</strong> a container <u>image</u> is pushed into a registry,<br>Kubernetes gets into the scene.
-							<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*luX6mOeIqCKOzPSA.jpg">
+							<img src="./assets/miro-k8s-features.webp">
 						</font>
 					</section>
 				</section>
@@ -84,7 +84,7 @@
 									<li>Declarative</li>
 									<li>Resilient</li>
 								</ul>
-								<img height="auto" width="45%" style="display: block-inline; white-space: nowrap;" src="https://tudip.com/wp-content/uploads/2020/10/Managing_Deployments_using_Kubernetes_Engine_01.png">
+								<img height="auto" width="45%" style="display: block-inline; white-space: nowrap;" src="./assets/managing-deployments.png">
 							</p>
 						</font>
 						<font size="3">image: <a href="https://tudip.com/blog-post/managing-deployments-using-kubernetes-engine/">https://tudip.com/blog-post/managing-deployments-using-kubernetes-engine/</a></font>
@@ -108,7 +108,7 @@
 								<br><strong>Cluster:</strong> a group of <del>master</del> control plane and <del>worker</del> data plane nodes
 							</p>
 							<p style="text-align: center;">
-								<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*Y7m1GPJ7fSNtrSgFOAMe3Q.png">
+								<img src="./assets/miro-k8s-architecture.png">
 								<br>
 								<font size="3">image: <a href="https://faun.pub/kubernetes-chronicles-k8s-01-introduction-to-kubernetes-architecture-18cad51d270f">https://faun.pub/kubernetes-chronicles-k8s-01-introduction-to-kubernetes-architecture-18cad51d270f</a></font>
 							</p>
@@ -124,7 +124,7 @@
 								<br><strong>kube-controller-manager:</strong> shifts the actual state of the cluster to the desired state (acts as cluster thermostat)
 							</p>
 							<p style="text-align: center;">
-								<img style="float: left" width="50%" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*Y7m1GPJ7fSNtrSgFOAMe3Q.png">
+								<img style="float: left" width="50%" src="./assets/miro-k8s-architecture.png">
 								<span style="float: right; text-align: center;"> <br><br><br><br>For high availability, <br>the control plane runs on multiple nodes.</span>
 							</p>
 						</font>
@@ -138,7 +138,7 @@
 								<br><strong>container runtime:</strong> (ie. Docker) pulls and runs container images from a registry
 							</p>
 							<p style="text-align: center;">
-								<img width="60%" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*Y7m1GPJ7fSNtrSgFOAMe3Q.png">
+								<img width="60%" src="./assets/miro-k8s-architecture.png">
 								<br>
 							</p>
 						</font>
@@ -344,7 +344,7 @@
 					<font size="5">
 						/ˌk(j)uːbərˈnɛtɪs, -ˈneɪtɪs, -ˈneɪtiːz, -ˈnɛtiːz/
 						<br>Cuba..nitas!
-						<img height="45%" width="auto" src="https://cubanitaskitchenaz.com/assets/img/cubanitas-logo-6.png">
+						<img height="45%" width="auto" src="./assets/cubanitas-logo-6.png">
 						K8s: Kate's
 				</font>
 				</section>
