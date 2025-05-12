@@ -1,4 +1,4 @@
-# hello-kubernetes-world
+# hello-kubernetes-world (outdated README)
 Presentation and relevant material.  
 Visit on https://centrefordigitalhumanities.github.io/hello-kubernetes-world/
 
