@@ -4,27 +4,357 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Hello Kubernetes World</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/night.css">
 
 		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<link rel="stylesheet" href="../plugin/highlight/zenburn.css">
+		<style type="text/css">
+			p { text-align: left; }
+			li {margin: 0 0 0 1em;}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-background-image="https://blog.appoptics.com/wp-content/uploads/2018/08/AO-Blog-Images-3000x2000-Troubleshoot-Kubernetes.jpg"
+				data-background-size="contain">
+					<h1>Hello Kubernetes World</h1>
+					<h4>from <a href="https://cdh.uu.nl/">Centre for Digital Humanities</a></h4>
+					<font size="4">
+						presentation repo:
+						<a href="https://github.com/centrefordigitalhumanities/hello-kubernetes-world/">https://github.com/centrefordigitalhumanities/hello-kubernetes-world/</a>
+					</font>
+				</section>
+				<section data-background-image="https://blog.appoptics.com/wp-content/uploads/2018/08/AO-Blog-Images-3000x2000-Troubleshoot-Kubernetes.jpg"
+				data-background-size="contain">
+					<h2>Outline</h2>
+					<ul>
+						<li>Why Kubernetes?</li>
+						<li>What is Kubernetes?</li>
+						<li>Cluster components</li>
+						<li>Basic objects</li>
+						<li>Minikube</li>
+						<li>Examples: Hello World, Snake, Bonus&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+						<li>Next steps</li><br><br><br>
+					</ul>
+				</section>
+				<section>
+					<section data-background-image="https://blog.appoptics.com/wp-content/uploads/2018/08/AO-Blog-Images-3000x2000-Troubleshoot-Kubernetes.jpg"
+					data-background-size="contain">
+						<h2>Why Kubernetes?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+						<font size="5">Over the years, people called <a href="https://imgs.xkcd.com/comics/compiling.png">developers</a> started<br> virtualizing and containerizing applications (separation of concerns)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+						<img src="https://kubernetes.io/images/docs/Container_Evolution.svg">
+						<font size="3">image: <a href="https://kubernetes.io/docs/concepts/overview/">https://kubernetes.io/docs/concepts/overview/</a></font>
+					</section>
+					<section>
+						<h2>Docker containers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+						<font size="5">"It works on my machine"<br><strong>"Then we will ship your machine to the customer"</strong><br></font>
+						<img src="https://k21academy.com/wp-content/uploads/2021/03/Screenshot-from-2021-03-26-11-01-09.png" height="auto" width="45%">
+						<img src="https://www.purestorage.com/content/dam/purestorage/knowledge/containers.jpg.imgo.jpg" height="auto" width="50%">
+						<font size="5">
+							<br>Containers made it easy to seperate applications but <u>managing</u> hundreds of containers was cumbersome...
+							<strong>Kubernetes to the rescue!</strong>
+						</font>
+						<br>
+						<font size="3">image: <a href="https://k21academy.com/docker-kubernetes/docker-and-kubernetes/">https://k21academy.com/docker-kubernetes/docker-and-kubernetes/</a></font>
+						<br><br><br><br><br><br><br><br>
+					</section>
+					<section>
+						<h2>Kubernetes features&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+						<font size="5">
+							<strong>After</strong> a container <u>image</u> is pushed into a registry,<br>Kubernetes gets into the scene.
+							<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/0*luX6mOeIqCKOzPSA.jpg">
+						</font>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>What is Kubernetes?&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+						<font size="5">
+							<p>Kubernetes is a distributed <u>container orchestration platform</u><br> for automating deployment and management of applications at scale.
+								<ul style="float: left; display: block-inline">
+									<br><br>Kubernetes is also:
+									<li>Open Source</li>
+									<li>Distributed</li>
+									<li>Extensible</li>
+									<li>Declarative</li>
+									<li>Resilient</li>
+								</ul>
+								<img height="auto" width="45%" style="display: block-inline; white-space: nowrap;" src="https://tudip.com/wp-content/uploads/2020/10/Managing_Deployments_using_Kubernetes_Engine_01.png">
+							</p>
+						</font>
+						<font size="3">image: <a href="https://tudip.com/blog-post/managing-deployments-using-kubernetes-engine/">https://tudip.com/blog-post/managing-deployments-using-kubernetes-engine/</a></font>
+					</section>
+					<section>
+						<h3>What is Kubernetes??&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+						<font size="5">
+							<br>Kubernetes is the "linux kernel" of distributed systems.
+							<br><a>*</a><br>It abstracts away the underlying <strong>infrastructure</strong> and provides a uniform interface for applications to be both deployed and consume the shared pool of resources.
+							<br><a>*</a><br>Kubernetes runs in <strong>nodes</strong>: on cloud or on premises or on a combination.
+						</font><br>
+						<br><br><br>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Cluster Components</h2>
+						<font size="5">
+							<p>
+								<strong>Node:</strong> a physical or virtual machine that contributes resources
+								<br><strong>Cluster:</strong> a group of <del>master</del> control plane and <del>worker</del> data plane nodes
+							</p>
+							<p style="text-align: center;">
+								<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*Y7m1GPJ7fSNtrSgFOAMe3Q.png">
+								<br>
+								<font size="3">image: <a href="https://faun.pub/kubernetes-chronicles-k8s-01-introduction-to-kubernetes-architecture-18cad51d270f">https://faun.pub/kubernetes-chronicles-k8s-01-introduction-to-kubernetes-architecture-18cad51d270f</a></font>
+							</p>
+						</font>
+					</section>
+					<section>
+						<h2>Control Plane</h2>
+						<font size="5">
+							<p>
+								<strong>kube-apiserver:</strong> allows user interaction with the cluster (CLI/UI)
+								<br><strong>etcd:</strong> stores key-value pairs for cluster configuration (state, parameters, secrets) 
+								<br><strong>kube-scheduler:</strong> decides which node a <span style="color: aqua;">pod</span> will run on
+								<br><strong>kube-controller-manager:</strong> shifts the actual state of the cluster to the desired state (acts as cluster thermostat)
+							</p>
+							<p style="text-align: center;">
+								<img style="float: left" width="50%" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*Y7m1GPJ7fSNtrSgFOAMe3Q.png">
+								<span style="float: right; text-align: center;"> <br><br><br><br>For high availability, <br>the control plane runs on multiple nodes.</span>
+							</p>
+						</font>
+					</section>					
+					<section>
+						<h2>Data Plane</h2>
+						<font size="5">
+							<p>
+								<strong>kubelet:</strong> agent ensures that containers are running, reports to the kube-apiserver
+								<br><strong>kube-proxy:</strong> facilitates networking between <span style="color: aqua;">pods</span> and handles external traffic
+								<br><strong>container runtime:</strong> (ie. Docker) pulls and runs container images from a registry
+							</p>
+							<p style="text-align: center;">
+								<img width="60%" src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*Y7m1GPJ7fSNtrSgFOAMe3Q.png">
+								<br>
+							</p>
+						</font>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Basic Objects</h2>
+						<font size="5">
+							<p style="text-align: center;">
+								<br><br><strong>Pod:</strong> the smallest computational unit, plugs&plays container(s), <u>ephemeral</u> in nature
+								<br><a>*</a><br><strong>Deployment:</strong> manages the lifecycle of identical pods by scaling, updating, self-healing
+								<br><a>*</a><br><strong>ConfigMap/Secret:</strong> holds data as key-value pairs, passwords and apikeys kept secret
+								<br><a>*</a><br><strong>Service:</strong> provides a <u>stable</u> IP address and domain name for reaching a deployment
+							</p>
+							<br><br><br><br>
+						</font>
+					</section>
+					<section>
+						<h2>More Objects</h2>
+						<font size="5">
+							<p style="text-align: center;">
+								<strong>StatefulSet:</strong> same as a deployment but for applications with persistent storage
+								<br><a>*</a><br><strong>Persistent Volume (PV):</strong>  represents a piece of storage that can be attached to pods
+								<br><a>*</a><br><strong>Persistent Volume Claim (PVC):</strong> requests PV resources with specific characteristics
+								<br><a>*</a><br><strong>Namespace:</strong> groups and isolates kubernetes objects in seperate cluster spaces
+								<br><br><br><br><br><strong>Label:</strong> nametags kubernetes objects; useful to select, identify, inform
+							</p>
+						</font>
+						<br>
+						<font size="3">even more on: <a href="https://kodekloud.com/blog/kubernetes-objects/">https://kodekloud.com/blog/kubernetes-objects/</a></font>
+					</section>
+				</section>
+				<section>
+					<h2>Minikube</h2>
+					<pre><code style="color: greenyellow;" data-trim data-noescape>
+						brew install minikube
+						minikube start
+						minikube dashboard
+						docker ps # 🤯
+						minikube config set memory 4096
+						kubectl config
+						watch kubectl get all
+					</code></pre>
+					an important file: ~/.kube/config
+					<br><br>
+					<font size="4">tutorial: <a href="https://www.digitalocean.com/community/tutorials/how-to-use-minikube-for-local-kubernetes-development-and-testing">how-to-use-minikube-for-local-kubernetes-development-and-testing@digitalocean</a></font>
+					<br><font size="4">kubectl: <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/">https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/</a></font>
+					| <font size="4">k9s: <a href="https://k9scli.io/">https://k9scli.io/</a></font>
+				</section>
+				<section>
+					<section>
+						<h2>Examples</h2>
+                        <pre><code style="color: greenyellow;" data-trim data-noescape>
+                            kubectl apply -f hello-k8s-message.yaml # or through dashboard
+                            kubectl apply -f kubesnake.yaml # or through dashboard
+                            minikube ip # or minikube service <name> --url
+                            minikube stop/delete # 💥
+                        </code></pre>
+                        <font size="4">example1: <a href="./kubernetes-examples/hello-k8s-message/hello-k8s-message.yaml">hello-k8s-message.yaml</a></font>
+                        | <font size="4">example2: <a href="./kubernetes-examples/kubesnake/kubesnake.yaml">kubesnake.yaml</a></font>
+                        <br>.<br>.<br>
+						Bonus: Development IdP
+					</section>
+					<section>
+						<h2>Development IdP</h2>
+						<font size="4">
+						<ul>
+							<li style="margin-bottom: 10px">A django app for developing & testing applications using SAML/OIDC</li>
+							<li style="margin-bottom: 10px">Meant for local Docker deployment, easily adapted to run in Kubertenes</li>
+							<li style="margin-bottom: 10px">For today: configuring docker apps, the K8S way</li>
+							<li style="margin-bottom: 10px">For at home: deploying using manifests & kustomize: see <a href="./kubernetes-examples/development-idp/README.md">example readme</a></li>
+						</ul>
+						</font>
+					</section>
+					<section>
+						<h2>In Docker compose</h2>
+						<div style="display: flex; gap: 1rem;">
+						<pre><code style="color: greenyellow;" data-trim data-noescape>
+							.
+							├── container.env
+							├── docker-compose.yml
+							├── private.key
+							└── public.cert
+						</code></pre>
+
+						<pre><code style="color: greenyellow;" data-trim data-noescape>
+							services:
+							  dev-idp:
+								  # [..]
+								  env_file:
+								    - ./container.env
+								  secrets:
+								    - private_key
+								    - public_cert
+
+							secrets:
+							  private_key:
+								  file: ./private.key
+							  public_cert:
+								  file: ./public.cert
+						</code></pre>
+						</div>
+					</section>
+					<section>
+						<h2>In Kubernetes</h2>
+						<font size="4">
+							<strong>The problem</strong><br/>
+							<span>We have no filesystem to retrieve these values and files from 🙁️</span><br/>
+							<strong>The solution</strong><br/>
+							<span>Use Kubernetes config maps and secrets</span><br/>
+
+						</font>
+					</section>
+					<section>
+						<h2>Env variables</h2>
+						<pre><code style="color: greenyellow;" data-trim data-noescape>
+						apiVersion: v1
+						kind: Secret
+						metadata:
+						  name: django-secrets
+						type: Opaque
+						data:
+						  DJANGO_SECRET_KEY: dG9wc3lfa3JldHMK
+						</code></pre>
+						<pre><code style="color: greenyellow;" data-trim data-noescape>
+						apiVersion: v1
+						kind: ConfigMap
+						metadata:
+						  name: django-config-map
+						data:
+						  DJANGO_HOST: "idp.example.org" # Change this to the domain you get from the ingress
+						  DJANGO_DB_TYPE: "sqlite"
+						  DJANGO_SQLLITE_FILE: "/data/db.sqlite3"
+						  # [..]
+						</code></pre>
+					</section>
+					<section>
+						<h2>Env variables</h2>
+						<pre><code style="color: greenyellow;" data-trim data-noescape>
+						# deployment.yaml
+						  containers:
+							- name: dev-idp
+							  envFrom:
+							  - configMapRef:
+								  name: django-config-map
+							  - secretRef:
+								  name: django-secrets
+						</code></pre>
+					</section>
+					<section>
+						<h2>File secrets</h2>
+						<pre><code style="color: greenyellow;" data-trim data-noescape>
+						apiVersion: v1
+						kind: Secret
+						metadata:
+						  name: django-certs
+						type: Opaque
+						data:
+						  private.key: [base64 encoded private key]
+						  public.cert: [base64 encoded public cert]
+						</code></pre>
+					</section>
+					<section>
+						<h2>File secrets</h2>
+						<pre><code style="color: greenyellow;" data-trim data-noescape>
+						# deployment.yaml
+						# [..]
+						volumes:
+						  - name: django-certs
+						    secret:
+						      secretName: django-certs
+						# [..]
+						containers:
+						  - name: dev-idp
+						    volumeMounts:
+						      - name: django-certs
+						        mountPath: /certs
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<h2>Next steps</h2>
+					<font size="5">
+						<p>
+							<ul style="float: left; display: block-inline">
+								<br><br>
+								<li>Networking ie. Ingress with load balancer</li>
+								<li>Autoscaling ie. Horizontal Pod Autoscaler</li>
+								<li>RBAC - Role Based Access Control</li>
+								<li>RedHat Openshift ITS <br> ie. Rootless Containers, Routes, Storage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+								<li>Helm & Kustomize package managers</li>
+								<li>ArgoCD for automatic deployments</li>
+								<li>Plugins ie. for backup, monitoring, metrics</li>
+							</ul>
+							<img height="auto" width="45%" style="display: block-inline; white-space: nowrap;" src="https://www.cncf.io/wp-content/uploads/2020/07/kubernetes-illustrated-guide-illustration-5.jpg">
+						</p>
+					</font>
+					<br><br><font size="3">image: <a href="https://www.cncf.io/phippy/the-childrens-illustrated-guide-to-kubernetes/">https://www.cncf.io/phippy/the-childrens-illustrated-guide-to-kubernetes/</a></font>
+				</section>
+				<section data-background-color="rgb(0, 31, 0)">
+					<h2>Qubi..nitis</h2>
+					<font size="5">
+						/ˌk(j)uːbərˈnɛtɪs, -ˈneɪtɪs, -ˈneɪtiːz, -ˈnɛtiːz/
+						<br>Cuba..nitas!
+						<img height="45%" width="auto" src="https://cubanitaskitchenaz.com/assets/img/cubanitas-logo-6.png">
+						K8s: Kate's
+				</font>
+				</section>
 			</div>
 		</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
