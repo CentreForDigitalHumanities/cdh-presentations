@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubesnake-deployment
+  labels:
+    app: kubesnake
+spec:
+  selector:
+    matchLabels:
+      app: kubesnake
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: kubesnake
+    spec:
+      containers:
+      - name: kubesnake
+        image: bhargavshah86/kube-test:v0.1
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: 256Mi
+            cpu: "250m"
+          requests:
+            memory: 128Mi
+            cpu: "80m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubesnake
+spec:
+  selector:
+    app: kubesnake
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30081   
+  type: NodePort
+# source https://github.com/skynet86/hello-world-k8s/blob/master/hello-world.yaml + minikube service hello-world --url
