@@ -1,8 +1,9 @@
-# hello-kubernetes-world (outdated README)
-Presentation and relevant material.  
-Visit on https://centrefordigitalhumanities.github.io/hello-kubernetes-world/
+# hello-k8s-world
+Presentation and relevant material.
+Visit on https://centrefordigitalhumanities.github.io/cdh-presentations/hello-k8s-world/
+This is the OG of online presentations and it used to be a separate repo.
 
-## How to get a presentation website up and running
+## How to get a presentation website up and running (outdated)
 Basic HTML and GIT knowledge is required.
 
 1. Create a new repository on GitHub
