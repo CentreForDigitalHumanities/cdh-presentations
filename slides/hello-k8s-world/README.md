@@ -19,3 +19,5 @@ Basic HTML and GIT knowledge is required.
 - [How to host a reveal.js presentation](https://stackoverflow.com/questions/31163633/how-to-host-a-reveal-js-presentation/)
 
 <a href="https://cdh.uu.nl/" target="_blank"><img src="https://github.com/CentreForDigitalHumanities/Education/blob/main/img/UU-CDH_logo_EN_def_UU_CDH_logo_EN_yellowwhite.jpg" width="300"></a>
+
+Useful link: https://stackoverflow.com/questions/23543193/can-i-put-a-caption-on-the-lower-right-in-reveal-js
