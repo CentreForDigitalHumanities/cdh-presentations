@@ -3,7 +3,7 @@ Presentation and relevant material.
 Visit on https://centrefordigitalhumanities.github.io/cdh-presentations/hello-k8s-world/
 This is the OG of online presentations and it used to be a separate repo.
 
-## How to get a presentation website up and running (outdated)
+## [Outdated] How to get a presentation website up and running
 Basic HTML and GIT knowledge is required.
 
 1. Create a new repository on GitHub
