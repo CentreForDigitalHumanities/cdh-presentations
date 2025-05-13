@@ -1,6 +1,6 @@
 # hello-k8s-world
 Presentation and relevant material.
-Visit on https://centrefordigitalhumanities.github.io/cdh-presentations/hello-k8s-world/
+Visit on https://centrefordigitalhumanities.github.io/cdh-presentations/slides/hello-k8s-world/
 This is the OG of online presentations and it used to be a separate repo.
 
 ## [Outdated] How to get a presentation website up and running
