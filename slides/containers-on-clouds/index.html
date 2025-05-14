@@ -12,9 +12,6 @@
 		<link rel="stylesheet" href="../../dist/reveal.css">
 		<link rel="stylesheet" href="../../dist/theme/serif.css" id="theme">
 		<style type="text/css">
-			p { text-align: left; }
-			li {margin: 0 0 0 1em;}
-
 			.full {
 				height:100%;
 				width:100%;  
@@ -35,8 +32,9 @@
 			.caption {
 				display: block;
 				position: absolute;
-				bottom: 3%;
+				bottom: 0%;
 				left: 30%;
+				font-size: 0.5em;
 			}
 		</style>
 	</head>
@@ -44,39 +42,124 @@
 	<body>
 
 		<div class="reveal">
-
 			<div class="slides">
 
 				<section data-background="#ffcd00" class="full">
 					<h2 class="heading2">Containers on Clouds</h2>
 					<img src="./assets/cloud_transparent.png">
-					<font size="4" class="caption">
+					<p class="caption">
 						<a href="https://www.linkedin.com/in/georgedamaskos/">Giorgos Damaskos</a>
 						<br>
 						presentation in repo:
 						<a href="https://github.com/centrefordigitalhumanities/cdh-presentations/">https://github.com/centrefordigitalhumanities/cdh-presentations/</a>
-					</font>
+					</p>
 					<p class="logo">
 						<a href="https://cdh.uu.nl/">
 							<img src="./assets/UU-CDH_logo_EN_def_UU_CDH_logo_EN_yellowwhite.jpg">
 						</a>
 					</p>
 				</section>
-				<section data-background="#ffcd00">
+				<section data-background="#ffcd00" data-background-image="assets/cloud_transparent.png" data-background-size="contain">
 					<h2>Outline</h2>
 					<ul>
 						<li>Why Containers?</li>
-						<li>Containized workflows</li>
+						<li>Containerized Workflow</li>
 						<li>Why Kubernetes?</li>
 						<li>What is Kubernetes?</li>
 						<li>Basic objects</li>
 						<li>Case study: knowledge-base</li>
-						<li>Discussion in the cafe</li>
+						<li>Freestyle Discussion</li>
 						<li>Extras?</li><br><br><br>
 					</ul>
 				</section>
+				<section>
+					<section data-background="#ffcd00" data-background-image="assets/cloud_transparent.png" data-background-size="contain">
+						<h2>Why Containers?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+						<font size="5">Over the years, people called <a href="./assets/compiling.png">developers</a> started<br> virtualizing and containerizing applications (separation of concerns)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
+						<img src="./assets/Container_Evolution.svg">
+					</section>
+					<section>
+						<h2>Containerized Workflow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+						<font size="5">"It works on my machine"<br><strong>"Then we will ship your machine to the customer"</strong><br></font>
+						<img src="./assets/container_workflow.png" height="auto" width="45%">
+						<img src="./assets/many-containers.jpg" height="auto" width="50%">
+						<font size="5">
+							<br>Containers made it easy to seperate applications but <u>managing</u> hundreds of containers was cumbersome...
+							<strong>Kubernetes to the rescue!</strong>
+						</font>
+						<br>
+						<font size="3">image: <a href="https://k21academy.com/docker-kubernetes/docker-and-kubernetes/">https://k21academy.com/docker-kubernetes/docker-and-kubernetes/</a></font>
+						<br><br><br><br><br><br><br><br>
+					</section>
+					<section>
+						<h2>Kubernetes features&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+						<h4>
+							<strong>After</strong> a container <u>image</u> is pushed into a registry, <br>Kubernetes gets into the scene.
+						</h4>
+						<img src="./assets/miro-k8s-features.webp">
+						<br><br><br>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>What is Kubernetes?&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+						<h4>
+							Kubernetes is a distributed <u>container orchestration platform</u><br> for automating deployment and management of applications at scale.
+						</h4>
+								<figure style="display: block-inline; position:absolute; left: 17%; top: 38%; font-size: 0.8em;">
+									<figcaption>Kubernetes is also</figcaption>
+									<ul>
+										<li>Open Source</li>
+										<li>Distributed</li>
+										<li>Extensible</li>
+										<li>Declarative</li>
+										<li>Resilient</li>
+									</ul>
+								</figure>
+							<img height="auto" width="33%" style="display: block-inline;" src="./assets/managing-deployments.png">
+							<p style="font-size: 0.5em;">image: <a href="https://tudip.com/blog-post/managing-deployments-using-kubernetes-engine/">https://tudip.com/blog-post/managing-deployments-using-kubernetes-engine/</a></p>
+					</section>
+					<section>
+						<h3>What is Kubernetes??&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+						<h4 size="5">
+							<br>Kubernetes is the "linux kernel" of distributed systems.
+							<br><a>*</a><br>It abstracts away the underlying <strong>infrastructure</strong> and provides a uniform interface for applications to be both deployed and consume the shared pool of resources.
+							<br><a>*</a><br>Kubernetes runs in <strong>nodes</strong>: on cloud or on premises or on a combination.
+						</h4><br>
+						<br><br><br>
+					</section>
+				</section>
+				<section>
+					<h2>Basic Objects</h2>
+					<font size="5">
+						<p style="text-align: center;">
+							<br><br><strong>Pod:</strong> the smallest computational unit, plugs&plays container(s), <u>ephemeral</u> in nature
+							<br><a>*</a><br><strong>Deployment:</strong> manages the lifecycle of identical pods by scaling, updating, self-healing
+							<br><a>*</a><br><strong>ConfigMap/Secret:</strong> holds data as key-value pairs, passwords and apikeys kept secret
+							<br><a>*</a><br><strong>Service:</strong> provides a <u>stable</u> IP address and domain name for reaching a deployment
+						</p>
+						<br><br><br><br>
+					</font>
+				</section>
+				<section>
+					<h2>Case study: knowledge-base</h2>
+					<ul>
+						<li>python mkdocs static website</li>
+						<li>run/serve locally</li>
+						<li>containerize</li>
+						<li>build pipeline</li>
+						<li>deploy to openshift</li>
+            <br><br><br>
+					</ul>
+				</section>
+				<section data-background="#ffcd00" data-background-image="assets/cloud_transparent.png" data-background-size="contain">
+					<h2>Discuss and Hangout</h2>
+					<h4>
+						"ask our software engineers with questions about programming, life, and everything else, or simply work from here while enjoying free drinks and snacks"
+					  hello kubernetes world link (minikube)
+					</h4>
+				</section>
 			</div>
-
 		</div>
 
 		<script src="../../dist/reveal.js"></script>
