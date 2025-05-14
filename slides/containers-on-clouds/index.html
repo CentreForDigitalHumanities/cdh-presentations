@@ -95,7 +95,7 @@
 							<strong>After</strong> a container <u>image</u> is pushed into a registry, <br>Kubernetes gets into the scene.
 						</h4>
 						<img src="./assets/miro-k8s-features.webp">
-						<br><br><br>
+						<br><br>
 					</section>
 				</section>
 				<section>
@@ -138,25 +138,48 @@
 						<br><br><br><br>
 				</section>
 				<section>
-					<h2>Case study: knowledge-base</h2>
-					<ul>
-						<li>python mkdocs static website</li>
-						<li>run/serve locally</li>
-						<li>containerize</li>
-						<li>build pipeline</li>
-						<li>deploy to openshift</li>
-            <br><br><br>
-					</ul>
+					<section>
+						<h2>Case study: containerize knowledge-base</h2>
+						<br>
+						<ul>
+							<li>We use python mkdocs to generate a static website</li>
+							<li><strong>Containerize</strong> in Docker and run in local machine</li>
+							<li>Make a <strong>build</strong> pipeline which <strong>pushes</strong> to a container registry</li>
+							<li>Deploy/Pull and see it running in Openshift Kubernetes</li>
+							<br><br><br>
+						</ul>
+					</section>
+					<section>
+						<h2>Dockerfile</h2>
+						<pre><code style="color: grey;">
+							# First stage
+							FROM python:3-alpine AS builder
+							RUN pip install --upgrade pip
+							RUN pip install mkdocs-material
+							COPY ./docs ./docs
+							COPY mkdocs-base.yml .
+							COPY mkdocs-gh.yml .
+							RUN mkdocs build -f mkdocs-gh.yml
+
+							# Second stage
+							FROM nginxinc/nginx-unprivileged:stable-alpine
+							COPY --from=builder /site /usr/share/nginx/html
+							COPY ./k8s-mirror/nginx_configuration/default.conf /etc/nginx/conf.d/default.conf
+							EXPOSE 8080
+						</code></pre>
+						<br><br>
+					</section>
 				</section>
 				<section data-background="#ffcd00" data-background-image="assets/cloud_transparent.png" data-background-size="contain">
+					<br>
 					<h2>Discuss and Hangout</h2>
 					<h4>
 						<br><br><br>
 						with Stefano's words:
 						<br>
 						"ask our software engineers questions about programming, life, and everything else,<br>or simply work from here while enjoying free drinks and snacks"
-						<br><br><br><br>
-						Thank you!
+						<br><br><br>
+						<p style="font-size: 1.4em;">Thank you!</p>
 						<br><br>
 					  Extra info and relevant material on:
 						<br>
