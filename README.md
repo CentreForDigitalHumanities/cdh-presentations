@@ -16,7 +16,7 @@ Basic HTML and GIT knowledge is required.
 - [Absolute styling on top of reveal.js](https://stackoverflow.com/questions/23543193/can-i-put-a-caption-on-the-lower-right-in-reveal-js)
 
 ### Styling and Branding
-- Styling like the [Template repository for creating a UU styled Quarto presentation](https://github.com/UtrechtUniversity/uu-quarto-presentation-template) ([Presentation](https://utrechtuniversity.github.io/uu-quarto-presentation-template/uu_template#/presentation-title)); which is based on the more advanced [Quarto]() ([Books](https://quarto.org/docs/books/)).
+- `slides/template` styling from [Template repository for creating a UU styled Quarto presentation](https://github.com/UtrechtUniversity/uu-quarto-presentation-template) ([Presentation](https://utrechtuniversity.github.io/uu-quarto-presentation-template/uu_template#/presentation-title)); which is based on the more advanced [Quarto]() ([Books](https://quarto.org/docs/books/)).
 - UU styled branding items from [Branding](https://github.com/CentreForDigitalHumanities/Branding/) and the [Brand Policy Index](https://www.uu.nl/en/organisation/corporate-identity/index-a-z), starting from the [Centre for Digital Humanities](https://github.com/CentreForDigitalHumanities/Branding/tree/main/Centre%20for%20Digital%20Humanities).
 - Elements from the [UU Bootstrap](https://github.com/UtrechtUniversity/UU-Bootstrap) repository; see https://utrechtuniversity.github.io/UU-Bootstrap/.
 
