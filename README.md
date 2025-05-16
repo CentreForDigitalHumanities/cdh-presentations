@@ -6,7 +6,7 @@ Basic HTML and GIT knowledge is required.
 
 1. Clone this repository
 2. Create a new directory under `slides` with the name of your presentation. No gaps please, check the other names.
-3. Copy the contents of the `template` or other presentations that you like.
+3. Copy the contents of the `slides/template` or other presentations that you like.
 4. Style it with HTML/CSS/JS. This can be tricky so trial and error is adviced. Any time you want to view the changes refresh the `index.html` locally in the browser.
 5. When you want to see it running as an online website commit and push. A pipeline runs. Voilà!
 
