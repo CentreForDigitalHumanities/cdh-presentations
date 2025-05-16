@@ -12,8 +12,8 @@ Basic HTML and GIT knowledge is required.
 
 ### References
 - [Basic setup](https://revealjs.com/installation/#basic-setup)
-- [How to host a reveal.js presentation](https://stackoverflow.com/questions/31163633/how-to-host-a-reveal-js-presentation/)
-- [Absolute styling on top of reveal.js](https://stackoverflow.com/questions/23543193/can-i-put-a-caption-on-the-lower-right-in-reveal-js)
+- [How to host a revealjs presentation](https://stackoverflow.com/questions/31163633/how-to-host-a-reveal-js-presentation/)
+- [Absolute styling on top of revealjs](https://stackoverflow.com/questions/23543193/can-i-put-a-caption-on-the-lower-right-in-reveal-js)
 
 ### Styling and Branding
 - `slides/template` styling inspired from [Template repository for creating a UU styled Quarto presentation](https://github.com/UtrechtUniversity/uu-quarto-presentation-template) ([Presentation](https://utrechtuniversity.github.io/uu-quarto-presentation-template/uu_template#/presentation-title)); which is based on the more advanced [Quarto]() ([Books](https://quarto.org/docs/books/)).
