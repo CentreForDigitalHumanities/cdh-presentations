@@ -8,7 +8,7 @@ Basic HTML and GIT knowledge is required.
 2. Create a new directory under `slides` with the name of your presentation. No gaps please, check the other names.
 3. Copy the contents of the `slides/template` or other presentations that you like.
 4. Style it with HTML/CSS/JS. This can be tricky so trial and error is adviced. Any time you want to view the changes refresh the `index.html` locally in the browser.
-5. When you want to see it running as an online website commit and push. A pipeline runs. Voilà!
+5. When you want to see it running as an online website commit and push. A pipeline runs and generates a link like: https://centrefordigitalhumanities.github.io/cdh-presentations/slides/name-of-the-presentation-folder/ Voilà!
 
 ### References
 - [Basic setup](https://revealjs.com/installation/#basic-setup)
