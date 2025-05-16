@@ -1,4 +1,4 @@
-# Easy online presentations for everyone within our guild
+# Easy online presentations for CDH guild
 This is a repository to host a bunch of online presentations for Centre for Digital Humanities.
 
 ## How to get a presentation website up and running
