@@ -1,5 +1,5 @@
 # Website presentations for the CDH guild 🧙🏽‍♂️ 🛡️ ⚔️ 🪄
-This is a repository to host a bunch of online presentations-as-code for the Centre for Digital Humanities. In a nutshell it's a combination of [revealjs](https://revealjs.com/) framework and Github Pages.
+This is a repository to host a bunch of online presentations-as-code for the Centre for Digital Humanities. In a nutshell it's a combination of [revealjs](https://revealjs.com/) framework and Github Pages. In revealjs site you can find a good documentation and there is a [template](https://centrefordigitalhumanities.github.io/cdh-presentations/slides/template) and a [containers-on-clouds]( https://centrefordigitalhumanities.github.io/cdh-presentations/slides/containers-on-clouds) presentation available here.
 
 ## How to get a presentation website up and running
 Basic HTML and GIT knowledge is required.
