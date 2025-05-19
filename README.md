@@ -5,6 +5,16 @@ This is a repository to host a bunch of online presentations-as-code for the Cen
 - [index](https://centrefordigitalhumanities.github.io/cdh-presentations/index.html)
 - [demo](https://centrefordigitalhumanities.github.io/cdh-presentations/demo.html)
 - [500-slides](https://centrefordigitalhumanities.github.io/cdh-presentations/examples/500-slides.html)
+- [auto-animate](https://centrefordigitalhumanities.github.io/cdh-presentations/examples/auto-animate.html)
+- [backgrounds](https://centrefordigitalhumanities.github.io/cdh-presentations/examples/backgrounds.html)
+- [barebones](https://centrefordigitalhumanities.github.io/cdh-presentations/examples/barebones.html)
+- [layout-helpers](https://centrefordigitalhumanities.github.io/cdh-presentations/examples/layout-helpers.html)
+- [lightbox](https://centrefordigitalhumanities.github.io/cdh-presentations/examples/lightbox.html)
+- [markdown](https://centrefordigitalhumanities.github.io/cdh-presentations/examples/markdown.html)
+- [math](https://centrefordigitalhumanities.github.io/cdh-presentations/examples/media.html)
+- [media](https://centrefordigitalhumanities.github.io/cdh-presentations/examples/media.html)
+- [scroll](https://centrefordigitalhumanities.github.io/cdh-presentations/examples/scroll.html)
+- [transitions](https://centrefordigitalhumanities.github.io/cdh-presentations/examples/transitions.html)
 
 ## How to get a presentation website up and running
 Basic HTML and GIT knowledge is required.
