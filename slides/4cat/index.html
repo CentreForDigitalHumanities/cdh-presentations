@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>4CAT</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="../../dist/reset.css">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+		<link rel="stylesheet" href="../../dist/theme/serif.css" id="theme">
+		
+        <style type="text/css">
+			.full {
+				height:100%;
+				width:100%;  
+			}
+			.heading2 {
+				display: block;
+				position: absolute;
+				bottom: 45%;
+				left: 28%;
+			}
+			.logo {
+				display: block;
+				height: 7%;
+				position: absolute;
+				bottom: 1.7%;
+				left: 0%;
+			}
+			.caption {
+				display: block;
+				position: absolute;
+				bottom: 0%;
+				left: 30%;
+				font-size: 0.5em;
+			}
+		</style>
+	</head>
+
+	<body>
+
+
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-background="#ffcd00" class="full">
+					<h2 class="heading2">Containers on Clouds</h2>
+					<img src="./assets/cloud_transparent.png">
+					<p class="caption">
+						<a href="https://www.linkedin.com/in/georgedamaskos/">Giorgos Damaskos</a>
+						<br>
+						presentation in repo:
+						<a href="https://github.com/centrefordigitalhumanities/cdh-presentations/">https://github.com/centrefordigitalhumanities/cdh-presentations/</a>
+					</p>
+					<p class="logo">
+						<a href="https://cdh.uu.nl/">
+							<img src="./assets/UU-CDH_logo_EN_def_UU_CDH_logo_EN_yellowwhite.jpg">
+						</a>
+					</p>
+				</section>
+				<section data-background="#ffcd00" data-background-image="assets/cloud_transparent.png" data-background-size="contain">
+					<h2>Outline</h2>
+					<ul>
+						<li>Why Containers?</li>
+						<li>Containerized Workflow</li>
+						<li>Why Kubernetes?</li>
+						<li>What is Kubernetes?</li>
+						<li>Basic objects</li>
+						<li>Case study: knowledge-base</li>
+						<li>Discuss and Hangout</li>
+					  <br><br><br>
+					</ul>
+				</section>
+				<section>
+					<section data-background="#ffcd00" data-background-image="assets/cloud_transparent.png" data-background-size="contain">
+						<h2>Why Containers?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+						<h5>Over the years, people called <a href="./assets/compiling.png">developers</a> started<br> virtualizing and containerizing applications (separation of concerns)</h5>
+						<img src="./assets/Container_Evolution.svg">
+					</section>
+					<section>
+						<h2>Containerized Workflow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+						<h4>"It works on my machine"<br><strong>"Then we will ship your machine to the customer"</strong><br></h4>
+						<img src="./assets/container_workflow.png" height="auto" width="45%">
+						<img src="./assets/many-containers.jpg" height="auto" width="50%">
+						<p style="font-size: 0.7em;">
+							Containers made it easy to seperate applications but <u>managing</u> hundreds of containers was cumbersome...
+							<strong>Kubernetes to the rescue!</strong>
+						</p>
+						<p style="font-size: 0.5em;">image: <a href="https://k21academy.com/docker-kubernetes/docker-and-kubernetes/">https://k21academy.com/docker-kubernetes/docker-and-kubernetes/</a></p>
+					</section>
+					<section>
+						<h2>Kubernetes features&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+						<h4>
+							<strong>After</strong> a container <u>image</u> is pushed into a registry, <br>Kubernetes gets into the scene.
+						</h4>
+						<img src="./assets/miro-k8s-features.webp">
+						<br><br>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>What is Kubernetes?&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+						<h4>
+							Kubernetes is a distributed <u>container orchestration platform</u><br> for automating deployment and management of applications at scale.
+						</h4>
+								<figure style="display: block-inline; position:absolute; left: 17%; top: 38%; font-size: 0.8em;">
+									<figcaption>Kubernetes is also</figcaption>
+									<ul>
+										<li>Open Source</li>
+										<li>Distributed</li>
+										<li>Extensible</li>
+										<li>Declarative</li>
+										<li>Resilient</li>
+									</ul>
+								</figure>
+							<img height="auto" width="33%" style="display: block-inline;" src="./assets/managing-deployments.png">
+							<p style="font-size: 0.5em;">image: <a href="https://tudip.com/blog-post/managing-deployments-using-kubernetes-engine/">https://tudip.com/blog-post/managing-deployments-using-kubernetes-engine/</a></p>
+					</section>
+					<section>
+						<h3>What is Kubernetes??&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+						<h4 size="5">
+							<br>Kubernetes is the "linux kernel" of distributed systems.
+							<br><a>*</a><br>It abstracts away the underlying <strong>infrastructure</strong> and provides a uniform interface for applications to be both deployed and consume the shared pool of resources.
+							<br><a>*</a><br>Kubernetes runs in <strong>nodes</strong>: on cloud or on premises or on a combination.
+						</h4><br>
+						<br><br><br>
+					</section>
+				</section>
+				<section>
+					<h2>Basic Objects</h2>
+						<p style="text-align: center; font-size: 1m;">
+							<br><strong>Pod:</strong> the smallest computational unit, plugs&plays container(s), <u>ephemeral</u> in nature
+							<br><a>*</a><br><strong>Deployment:</strong> manages the lifecycle of identical pods by scaling, updating, self-healing
+							<br><a>*</a><br><strong>ConfigMap/Secret:</strong> holds data as key-value pairs, passwords and apikeys kept secret
+							<br><a>*</a><br><strong>Service:</strong> provides a <u>stable</u> IP address and domain name for reaching a deployment
+							<br><a>*</a><br><strong>Namespace:</strong> groups and isolates kubernetes objects in seperate cluster spaces
+						</p>
+						<br>
+				</section>
+				<section>
+					<section>
+						<h2>Case study: knowledge-base</h2>
+						<br>
+						<ul>
+							<li>We use python mkdocs to generate a static website</li>
+							<li><strong>Containerize</strong> for Docker and run in local machine</li>
+							<li>Make a <strong>build</strong> pipeline which <strong>pushes</strong> to a container registry</li>
+							<li>Deploy and see it running in Openshift Kubernetes</li>
+							<br><br><br>
+						</ul>
+					</section>
+					<section>
+						<h2>Dockerfile</h2>
+						<pre><code style="color: grey;">
+							# First stage
+							FROM python:3-alpine AS builder
+							RUN pip install --upgrade pip
+							RUN pip install mkdocs-material
+							COPY ./docs ./docs
+							COPY mkdocs-base.yml .
+							COPY mkdocs-gh.yml .
+							RUN mkdocs build -f mkdocs-gh.yml
+
+							# Second stage
+							FROM nginxinc/nginx-unprivileged:stable-alpine
+							COPY --from=builder /site /usr/share/nginx/html
+							COPY ./k8s-mirror/nginx_configuration/default.conf /etc/nginx/conf.d/default.conf
+							EXPOSE 8080
+						</code></pre>
+						* Puts on glasses *
+						<br>
+						Time to run some code!
+						<br><br>
+					</section>
+				</section>
+				<section data-background-image="assets/flower-banana-clipart-14.png" data-background-size="contain">
+					<h2>Discuss and Hangout</h2>
+					<h4>
+						<br><br>
+						with Stefano's words:
+						<br>
+						"ask our software engineers questions about programming, life, and everything else,<br>or simply work from here while enjoying free drinks and snacks"
+						<br><br><br>
+						<p style="font-size: 1.4em;">Thank you!</p>
+						<span style="font-size: .6em;">Every app needs a place to run \o/</span>
+						<br>
+						<br>
+					  Extra info and relevant material on:
+						<br>
+						<a href="https://centrefordigitalhumanities.github.io/cdh-presentations/slides/hello-k8s-world/">
+							https://centrefordigitalhumanities.github.io/cdh-presentations/slides/hello-k8s-world/
+						</a>
+					</h4>
+				</section>
+			</div>
+		</div>
+
+		<script src="../../dist/reveal.js"></script>
+		<script>
+
+			// Full list of configuration options:
+			// https://revealjs.revealjs.com/config/
+			Reveal.initialize({
+				center: true,
+        width: "100%",
+        height:"100%",
+				transition: 'linear',
+				// transitionSpeed: 'slow',
+				// backgroundTransition: 'slide'
+			});
+
+		</script>
+
+	</body>
+</html>

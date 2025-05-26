@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>CDH Presentations - RevealJS</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -12,16 +12,69 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<style type="text/css">
+			p { text-align: left; }
+			li {margin: 0 0 0 1em;}
+
+			.full {
+				height:100%;
+				width:100%;  
+			}
+			.heading2 {
+				display: block;
+				position: absolute;
+				bottom: 50%;
+				left: 30%;
+			}
+			.heading4 {
+				display: block;
+				position: absolute;
+				bottom: 40%;
+				left: 40%;
+			}
+			.logo {
+				display: block;
+				height: 7%;
+				position: absolute;
+				bottom: 1.7%;
+				left: 0%;
+			}
+			.caption {
+				display: block;
+				position: absolute;
+				bottom: 0%;
+				left: 30%;
+				font-size: 0.5em;
+			}
+		</style>
+
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-background="#ffcd00" class="full">
+					<h2 class="heading2">Presentation title</h2>
+					<h4 class="heading4">Presentation subtitle</h4>
+					<p class="logo">
+						<a href="https://cdh.uu.nl/">
+							<img src="./assets/UU-CDH_logo_EN_def_UU_CDH_logo_EN_whiteFC.svg" alt="UU-CDH logo">
+						</a>
+					</p>
+					<p class="caption">
+						nota bene lorem ipsum - sol iustitiae illustra nos - lorem ipsum lorem ipsum
+					</p>
+				<section>Centre for Digital Humanities</section>
+				<section data-markdown>
+					<script type="text/template">
+						# Slide 1
+						- This is a slide with Markdown content.
+						- It can contain lists, **bold text**, and *italic text*.
+					</script>
 			</div>
 		</div>
 
-		<script src="dist/reveal.js"></script>
+		<script src="../../dist/reveal.js"></script>
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
@@ -31,6 +84,12 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				center: true,
+        		width: "100%",
+        		height:"100%",
+				transition: 'linear',
+				// transitionSpeed: 'slow',
+				// backgroundTransition: 'slide'
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
