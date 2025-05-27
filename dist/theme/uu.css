@@ -10,7 +10,7 @@
 body, .reveal {
   font-family: var(--uu-font);
   color: var(--uu-black);
-  background-color: var(--uu-grey);
+  background-color: var(--uu-yellow);
 }
 
 h1, h2, h3, h4, h5, h6 {
