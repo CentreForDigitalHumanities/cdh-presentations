@@ -140,8 +140,8 @@ button:hover, .btn:hover, .reveal .controls button:hover {
 }
 
 .code-wrapper {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* Optional: Add UU yellow bar at the bottom */
