@@ -104,6 +104,11 @@ button:hover, .btn:hover, .reveal .controls button:hover {
   padding: 2em;
 }
 
+.reveal .progress {
+  height: 10px;
+  color: var(--uu-red);
+}
+
 /* Optional: Add UU yellow bar at the bottom */
 .uu-bar {
   position: fixed;
