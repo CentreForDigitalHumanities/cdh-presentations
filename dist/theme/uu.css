@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+
 /* Utrecht University Brand Colors */
 :root {
   --uu-yellow: #ffcd00;
@@ -16,7 +19,7 @@ body, .reveal {
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--uu-black);
-  font-family: var(--uu-font);
+  font-family: 'Merriweather', serif;
   font-weight: bold;
 }
 
@@ -45,7 +48,8 @@ a:hover {
 
 /* Lists and Paragraphs */
 p { 
-  text-align: left; 
+  text-align: left;
+  font-family: 'Open Sans', Arial, sans-serif;
 }
 li {
   margin: 0 0 0 1em;
