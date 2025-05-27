@@ -120,6 +120,19 @@ button:hover, .btn:hover, .reveal .controls button:hover {
   color: var(--uu-red);
 }
 
+.reveal q {
+  font-style: italic;
+}
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: var(--r-block-margin) auto;
+  padding: 5px;
+  font-style: italic;
+}
+
 /* Optional: Add UU yellow bar at the bottom */
 .uu-bar {
   position: fixed;
