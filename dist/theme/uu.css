@@ -112,6 +112,7 @@ button:hover, .btn:hover, .reveal .controls button:hover {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(35,31,32,0.08);
   padding: 2em;
+  text-align: left;
 }
 
 .reveal .progress {
