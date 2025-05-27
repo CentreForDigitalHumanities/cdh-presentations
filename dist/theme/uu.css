@@ -4,6 +4,7 @@
   --uu-black: #231f20;
   --uu-grey: #e5e5e5;
   --uu-font: 'Arial', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --uu-red: #c5001a;
 }
 
 /* Typography */
@@ -33,12 +34,12 @@ h2, .h2 {
 }
 
 a {
-  color: var(--uu-yellow);
+  color: var(--uu-red);
   text-decoration: underline;
 }
 a:hover {
   color: var(--uu-black);
-  background: var(--uu-yellow);
+  background: var(--uu-red);
   text-decoration: none;
 }
 
