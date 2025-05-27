@@ -9,6 +9,7 @@
   --uu-grey: #e5e5e5;
   --uu-white: #ffffff;
   --uu-red: #c5001a;
+  --uu-creme: #ffe6ab;
   --uu-font: 'Open Sans', 'Merriweather', 'Zilla Slab', Arial, Helvetica, sans-serif;
 }
 
@@ -132,6 +133,10 @@ button:hover, .btn:hover, .reveal .controls button:hover {
   margin: var(--r-block-margin) auto;
   padding: 5px;
   font-style: italic;
+  line-height: 1.6;
+  background-color: var(--uu-creme);
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .code-wrapper {
