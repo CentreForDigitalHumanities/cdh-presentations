@@ -1,0 +1,28 @@
+get together warm up spread the word
+---------------------------------------------------  speaker notes
+TITLE, HOSTED, LETS SEE TALK ABOUT , KNOW MORE DEVELOPERS MODEL, CONTEXTS/CLUSTERS
+~ abundance of information on internet, avoid inaccurate ~
+Too much info issue was to find clear messages non redundant consistent. A multitude richness of info online.
+abundance, plethora, surplus
+
+shares the kernel with the host OS (lightweight VMs)
+A container image registry like DockerHub is an online catalogue for containers.
+ microservices architecture
+ another way to approach this is to draw an analogy, helpful for the undestanding, some people say
+
+ *For high availability, the control plane runs on multiple nodes.
+ resource management OS analogy (flavors, cloud providers)
+ 
+ fun fact: the name pod comes from the collective for whales which hints the docker containers running inside
+ objects are like pieces of puzzle tha fit together
+ python flask RESTful APIs
+ Job, CronJob
+  .ssh/config with ~/.kube/config
+ SKIP k9s (htop/watch) learning curve conceptual level rather than commands
+ bare minikube explore 
+ 
+K8s takes a considerate time investment to get used to however after that it provides many high quality solutions for common situations.
+I hope that now we ready for Cubanitas!
+
+an online search will compensate well
+
